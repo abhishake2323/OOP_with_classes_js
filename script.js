@@ -61,7 +61,10 @@ class ClassPropertiesInventory{
 
     findProductByName(name){
         if( this.products.includes(name)){
-            return name
+            return name;
+        }
+        else{
+            return null;
         }
          
     }

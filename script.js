@@ -45,10 +45,13 @@ let milk = new PerishableProductProperties("Milk", 1.5, 4, new Date('2024-12-16'
 let eggs = new PerishableProductProperties("Eggs", 0.25, 6, new Date('2024-12-27').toISOString().slice(0, 10))
 
 
-class PropertiesInventory {
+class StoreInventory {
 
-    constructor(products) {
+    constructor(products=[]) {
+
         this.products = products
+
+
     }
 
     addProduct(product) {
@@ -56,7 +59,11 @@ class PropertiesInventory {
 
     }
     getInventoryValue() {
-        return this.products.reduce((x, y) => x.getTotalValue() + y.getTotalValue());
+        let sum=0;
+        this.products.forEach(element => {
+            sum= sum+element.getTotalValue()
+        });
+        return sum 
     }
 
     findProductByName(name) {
@@ -79,3 +86,9 @@ let bread = new PerishableProductProperties("Bread", 2.5, 1, '2024-12-30');
 let cheese = new PerishableProductProperties("Cheese", 1.89, 1, '2024-12-30');
 
 
+let store = new StoreInventory( )
+store.addProduct(soda)
+store.addProduct(paper)
+store.addProduct(pen)
+store.addProduct(bread)
+store.addProduct(cheese)

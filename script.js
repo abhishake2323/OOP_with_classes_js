@@ -1,5 +1,5 @@
 
-
+//Part 1: Setting Up Classes
 class ProductProperties {
 
     constructor(name, price, quantity) {
@@ -24,7 +24,7 @@ class ProductProperties {
 
 }
 
-
+//Part 2: Adding Inheritance
 class PerishableProductProperties extends ProductProperties {
     constructor(name, price, quantity, expirationDate) {
         super(name, price, quantity)
@@ -47,7 +47,7 @@ let eggs = new PerishableProductProperties("Eggs", 0.25, 6, new Date('2024-12-27
 
 class StoreInventory {
 
-    constructor(products=[]) {
+    constructor(products = []) {
 
         this.products = products
 
@@ -59,11 +59,11 @@ class StoreInventory {
 
     }
     getInventoryValue() {
-        let sum=0;
+        let sum = 0;
         this.products.forEach(element => {
-            sum= sum+element.getTotalValue()
+            sum = sum + element.getTotalValue()
         });
-        return sum 
+        return sum
     }
 
     findProductByName(name) {
@@ -86,18 +86,18 @@ let bread = new PerishableProductProperties("bread", 2.5, 1, '2024-12-30');
 let cheese = new PerishableProductProperties("cheese", 1.89, 1, '2024-12-30');
 
 
-let store = new StoreInventory( )
+let store = new StoreInventory()
 store.addProduct(soda)
 store.addProduct(paper)
 store.addProduct(pen)
 store.addProduct(bread)
 store.addProduct(cheese)
 
-console.log("Total inventory value before applying discount : "+store.getInventoryValue())
+console.log("Total inventory value before applying discount : " + store.getInventoryValue())
 
-ProductProperties.applyDiscount(store.products,15)
+ProductProperties.applyDiscount(store.products, 15)
 
-console.log("Total inventory value after applying discount : "+store.getInventoryValue())
+console.log("Total inventory value after applying discount : " + store.getInventoryValue())
 
 console.log("Finding a product by its name: 'paper' ,'banana','bread' : ")
 

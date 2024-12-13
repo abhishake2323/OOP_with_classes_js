@@ -45,27 +45,37 @@ let milk = new PerishableProductProperties("Milk", 1.5, 4, new Date('2024-12-16'
 let eggs = new PerishableProductProperties("Eggs", 0.25, 6, new Date('2024-12-27').toISOString().slice(0, 10))
 
 
-class ClassPropertiesInventory{
+class PropertiesInventory {
 
-    constructor(products){
-        this.products=  products
+    constructor(products) {
+        this.products = products
     }
 
-    addProduct(product){
+    addProduct(product) {
         this.products.push(product)
 
     }
-    getInventoryValue(){
-        return this.products.reduce( (x ,y ) => x.getTotalValue()+y.getTotalValue() );
+    getInventoryValue() {
+        return this.products.reduce((x, y) => x.getTotalValue() + y.getTotalValue());
     }
 
-    findProductByName(name){
-        if( this.products.map((obj)=>(obj.name)).includes(name)){
+    findProductByName(name) {
+        if (this.products.map((obj) => (obj.name)).includes(name)) {
             return name;
         }
-        else{
+        else {
             return null;
         }
-         
+
     }
 }
+
+//creating 5 products with 2 perishable products
+
+let soda = new ProductProperties("sodacan", 2.5, 1);
+let paper = new ProductProperties("paper", 1.2, 3);
+let pen = new ProductProperties("pen", 4.2, 1);
+let bread = new PerishableProductProperties("Bread", 2.5, 1, '2024-12-30');
+let cheese = new PerishableProductProperties("Cheese", 1.89, 1, '2024-12-30');
+
+

@@ -56,7 +56,7 @@ class ClassPropertiesInventory{
 
     }
     getInventoryValue(){
-
+        return this.products.reduce( (x ,y ) => x.getTotalValue()+y.getTotalValue() );
     }
 
     findProductByName(name){

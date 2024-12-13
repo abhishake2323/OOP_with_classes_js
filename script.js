@@ -9,6 +9,9 @@ class ProductProperties {
 
     }
 
+    static applyDiscount(products, discount){
+        
+    }
     getTotalValue(){
 
         return this.price * this.quantity

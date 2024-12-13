@@ -92,3 +92,9 @@ store.addProduct(paper)
 store.addProduct(pen)
 store.addProduct(bread)
 store.addProduct(cheese)
+
+console.log("Total inventory value before applying discount : "+store.getInventoryValue())
+
+ProductProperties.applyDiscount(store.products,15)
+
+console.log("Total inventory value after applying discount : "+store.getInventoryValue())

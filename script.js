@@ -52,6 +52,7 @@ class ClassPropertiesInventory{
     }
 
     addProduct(product){
+        this.products.push(product)
 
     }
     getInventoryValue(){

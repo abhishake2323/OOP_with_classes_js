@@ -10,7 +10,9 @@ class ProductProperties {
     }
 
     static applyDiscount(products, discount){
-        
+        products.forEach(product => {
+            product.price=product.price-(product.price*(discount/100))
+        });
     }
     getTotalValue(){
 

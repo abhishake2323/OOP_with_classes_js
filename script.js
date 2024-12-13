@@ -60,7 +60,7 @@ class ClassPropertiesInventory{
     }
 
     findProductByName(name){
-        if( this.products.includes(name)){
+        if( this.products.map((obj)=>(obj.name)).includes(name)){
             return name;
         }
         else{

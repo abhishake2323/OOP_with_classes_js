@@ -32,3 +32,9 @@ class PerishableProductProperties extends ProductProperties{
     }
 
 }
+
+
+//instantiation
+
+let milk = new PerishableProductProperties("Milk",1.5,4,new Date('2024-12-16').toISOString().slice(0,10))
+let eggs = new PerishableProductProperties("Eggs",0.25,6,new Date('2024-12-27').toISOString().slice(0,10))

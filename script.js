@@ -8,7 +8,7 @@ class ProductProperties {
         this.quantity = quantity;
 
     }
-
+    // Part 3: Static Methods and Properties
     static applyDiscount(products, discount) {
         products.forEach(product => {
             product.price = product.price - (product.price * (discount / 100))
@@ -44,6 +44,7 @@ class PerishableProductProperties extends ProductProperties {
 let milk = new PerishableProductProperties("Milk", 1.5, 4, new Date('2024-12-16').toISOString().slice(0, 10))
 let eggs = new PerishableProductProperties("Eggs", 0.25, 6, new Date('2024-12-27').toISOString().slice(0, 10))
 
+// Part 4: Store Management
 
 class StoreInventory {
 

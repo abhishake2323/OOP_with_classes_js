@@ -9,30 +9,30 @@ class ProductProperties {
 
     }
 
-    static applyDiscount(products, discount){
+    static applyDiscount(products, discount) {
         products.forEach(product => {
-            product.price=product.price-(product.price*(discount/100))
+            product.price = product.price - (product.price * (discount / 100))
         });
     }
-    getTotalValue(){
+    getTotalValue() {
 
         return this.price * this.quantity
     }
-    toString(){
+    toString() {
         return `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity}"`
     }
 
 }
 
 
-class PerishableProductProperties extends ProductProperties{
-    constructor(name, price, quantity,expirationDate ) {
-        super(name,price,quantity)
-       this.expirationDate =expirationDate ;
+class PerishableProductProperties extends ProductProperties {
+    constructor(name, price, quantity, expirationDate) {
+        super(name, price, quantity)
+        this.expirationDate = expirationDate;
 
     }
 
-    toString(){
+    toString() {
         return `Product: ${this.name}, Price: $${this.price}, Quantity: ${this.quantity},Expiration Date: ${this.expirationDate}"`
     }
 
@@ -41,5 +41,24 @@ class PerishableProductProperties extends ProductProperties{
 
 //instantiation
 
-let milk = new PerishableProductProperties("Milk",1.5,4,new Date('2024-12-16').toISOString().slice(0,10))
-let eggs = new PerishableProductProperties("Eggs",0.25,6,new Date('2024-12-27').toISOString().slice(0,10))
+let milk = new PerishableProductProperties("Milk", 1.5, 4, new Date('2024-12-16').toISOString().slice(0, 10))
+let eggs = new PerishableProductProperties("Eggs", 0.25, 6, new Date('2024-12-27').toISOString().slice(0, 10))
+
+
+class ClassPropertiesInventory{
+
+    constructor(products){
+        this.products=  products
+    }
+
+    addProduct(product){
+
+    }
+    getInventoryValue(){
+
+    }
+
+    findProductByName(name){
+
+    }
+}

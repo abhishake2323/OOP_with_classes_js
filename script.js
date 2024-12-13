@@ -69,7 +69,7 @@ class StoreInventory {
 
     findProductByName(name) {
         if (this.products.map((obj) => (obj.name)).includes(name)) { //return true if Name consists in any of elements in Object array 
-            return name;
+            return this.products.filter( (x)=>(x.name===name))[0];
         }
         else {
             return null;

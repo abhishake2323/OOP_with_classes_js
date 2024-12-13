@@ -82,8 +82,8 @@ class StoreInventory {
 let soda = new ProductProperties("sodacan", 2.5, 1);
 let paper = new ProductProperties("paper", 1.2, 3);
 let pen = new ProductProperties("pen", 4.2, 1);
-let bread = new PerishableProductProperties("Bread", 2.5, 1, '2024-12-30');
-let cheese = new PerishableProductProperties("Cheese", 1.89, 1, '2024-12-30');
+let bread = new PerishableProductProperties("bread", 2.5, 1, '2024-12-30');
+let cheese = new PerishableProductProperties("cheese", 1.89, 1, '2024-12-30');
 
 
 let store = new StoreInventory( )
@@ -98,3 +98,9 @@ console.log("Total inventory value before applying discount : "+store.getInvento
 ProductProperties.applyDiscount(store.products,15)
 
 console.log("Total inventory value after applying discount : "+store.getInventoryValue())
+
+console.log("Finding a product by its name: 'paper' ,'banana','bread' : ")
+
+console.log(store.findProductByName("paper"))
+console.log(store.findProductByName("banana"))
+console.log(store.findProductByName("bread"))
